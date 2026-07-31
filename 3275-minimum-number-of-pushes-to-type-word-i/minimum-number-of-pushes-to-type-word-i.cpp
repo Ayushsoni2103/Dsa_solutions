@@ -1,22 +1,23 @@
 class Solution {
 public:
     int minimumPushes(string word) {
-        int push=0;
-    unordered_map<int,int> mp;
-    int key=2;  
-    
-    for(int i=0;i<word.size();i++){
-        if(key>9){
-            key=2;
+        if(word.length()>8){
+            int push=8;
+            int i=8;
+            int k=1;
+            while(i!=word.length()){
+                if(i%8==0){
+                    k++;
+                }
+                
+                push+=k;
+                i++;
+
+            }
+            return push;
+            
         }
-        mp[key]++;
-        push=push+mp[key];
-        key++;
-
-    }
-
-
-    
-    return push; 
+            return word.length();
+        
     }
 };
