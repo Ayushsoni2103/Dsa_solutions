@@ -7,13 +7,11 @@ public:
             j--;
         }
         while(j>=0){
-            
             if(s[j]==' '){
                break;
             }
             count++;
             j--;
-
         }
         return count;
         
