@@ -1,18 +1,19 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        unordered_map<char,int> mp;
-        for(char ch:ransomNote){
-            mp[ch]++;
+        vector<int> nums1(26,0);
+        vector<int> nums2(26,0);
+        for(char ch :ransomNote){
+            nums1[ch-'a']++;
         }
         for(char ch:magazine){
-            if(mp.find(ch)!=mp.end()){
-                mp[ch]--;
-            }
-            if(mp[ch]==0){
-                mp.erase(ch);
+            nums2[ch-'a']++;
+        }
+        for(int i=0;i<26;i++){
+            if(nums1[i]>nums2[i]){
+                return false;
             }
         }
-        return mp.empty();  
+        return true;
     }
 };
