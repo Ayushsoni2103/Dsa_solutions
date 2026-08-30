@@ -21,8 +21,5 @@ public:
       int b=min(min_index,max_index)+1+(nums.size()-max(min_index,max_index));
       int c = nums.size() - min(min_index,max_index);
       return min(a,min(b,c));
-
-
-
     }
 };
