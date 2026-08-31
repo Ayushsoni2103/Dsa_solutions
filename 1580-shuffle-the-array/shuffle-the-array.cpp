@@ -9,7 +9,6 @@ public:
             left++;
             ans.push_back(nums[right]);
             right++;
-
         }
         return ans;
         
