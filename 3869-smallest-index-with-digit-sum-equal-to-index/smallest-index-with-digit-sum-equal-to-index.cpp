@@ -1,7 +1,6 @@
 class Solution {
 public:
-    int smallestIndex(vector<int>& nums) {
-       
+    int smallestIndex(vector<int>& nums) {  
         for(int i=0;i<nums.size();i++){
  int digit_sum=0;
  while(nums[i]>0){
@@ -12,7 +11,7 @@ public:
  if(digit_sum==i){
     return i;
  }
-        }
-        return -1;
+ }
+    return -1;
     }
 };
