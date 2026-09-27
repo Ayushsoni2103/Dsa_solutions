@@ -16,12 +16,7 @@ public:
                 j++;
                 }
                 if(mp.find(temp)!=mp.end()){
-                    int k=0;
-                    while(k<mp[temp].size()){
-                    ans+=mp[temp][k];
-                    k++;
-                    }
-                
+                    ans+=mp[temp];
                 }
                 if(mp.find(temp)==mp.end()){
                     ans+='?';
