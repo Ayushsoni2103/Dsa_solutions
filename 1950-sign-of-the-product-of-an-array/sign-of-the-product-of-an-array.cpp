@@ -9,8 +9,6 @@ public:
     }
     return 1;
  }
-
-
     int arraySign(vector<int>& nums) {
         int count=0;
         int centi=0;
