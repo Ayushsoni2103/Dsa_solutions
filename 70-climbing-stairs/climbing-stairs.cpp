@@ -1,6 +1,7 @@
 class Solution {
 public:
-int solve(int i,int n, vector<int>&dp){
+//bottom up approach
+/* int solve(int i,int n, vector<int>&dp){
        if(n==i){
             return 1 ;
         }
@@ -14,9 +15,18 @@ int solve(int i,int n, vector<int>&dp){
         solve(i+2,n,dp);
         return dp[i];
 }
+*/
+int solve(vector<int>&dp,int n){
+    dp[0]=1;
+    dp[1]=1;
+    for(int i=2;i<=n;i++){
+        dp[i]=dp[i-1]+dp[i-2];
+    }
+    return dp[n];
+}
     int climbStairs(int n) {
         vector<int>dp(n+1,-1);
-        int i=0;
-        return solve(0,n,dp);
+        return solve(dp,n);
     }
+    
 };
