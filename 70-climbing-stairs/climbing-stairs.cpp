@@ -16,6 +16,7 @@ public:
         return dp[i];
 }
 */
+// top down approach
 int solve(vector<int>&dp,int n){
     dp[0]=1;
     dp[1]=1;
