@@ -1,10 +1,18 @@
 class Solution {
 public:
     int findNonMinOrMax(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        if(nums.size()<3){
-            return -1;
+        int mini=INT_MAX;
+        int maxi=INT_MIN;
+        for(int i=0;i<nums.size();i++){
+            mini=min(mini,nums[i]);
+            maxi=max(maxi,nums[i]);
         }
-        return nums[nums.size()/2];
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>mini&&nums[i]<maxi){
+                return nums[i];
+            }
+        }
+        return -1;
+        
     }
 };
