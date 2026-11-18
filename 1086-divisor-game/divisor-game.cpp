@@ -1,25 +1,17 @@
 class Solution {
 public:
-bool solve(int n,vector<int>&dp){
-    if(n==1){
-return false;
-    }
-    if(dp[n]!=-1){
-        return dp[n];
-    }
-    for(int i=1;i<=n/2;i++){
-        if(n%i==0){
-            if(solve(n-i,dp)==false){
-                dp[n]=true;
-                return dp[n];
+    bool divisorGame(int n) {
+        vector<bool> dp(n+1,0);
+        dp[1]=false;
+        for(int i=2;i<=n;i++){
+            dp[i]=false;
+            for(int x=1;x<=i/2;x++){
+             if(i%x==0&&dp[i-x]==false){
+                dp[i]=true;
+                break;
+             }
             }
         }
-    }
-return false;
-    }
-
-    bool divisorGame(int n) {
-        vector<int>dp(n+1,-1);
-        return solve(n,dp);
+        return dp[n];
     }
 };
